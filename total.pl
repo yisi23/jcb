@@ -1,10 +1,12 @@
 #!/usr/bin/perl
 use Encode;
 binmode(STDOUT, ":utf8");
+
+my $fiel=shift;
 my %data=();
 my $content; 
 my $char;
-open(FILE, "<", "sms_lj_jcb")  or die "cannot open < smms: $!";	
+open(FILE, "<", $file)  or die "cannot open < smms: $!";	
 @lines = <FILE>; 
 foreach $LINE (@lines) {  
      $LINE=~ tr/\t\" //d;
